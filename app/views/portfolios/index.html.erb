@@ -1,0 +1,6 @@
+<h1>Portfolios</h1>
+<ul>
+<% @portfolios.each do |portfolio| %>
+	<li><%= link_to portfolio.name, portfolio %> <%= number_to_currency portfolio.total_spend, :precision => 0 %></li>
+<% end %>
+<ul>

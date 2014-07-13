@@ -1,0 +1,11 @@
+<h1><%= link_to @program.agency.portfolio.name, @program.agency.portfolio%> - <%= link_to @program.agency.name, [@program.agency.portfolio,@program.agency] %> - <%= link_to @program.name, [@program.agency.portfolio,@program.agency,@program] %></h1>
+<ul>
+	<% @program.components.each do |component| %>
+		<li>
+			<%= component.name %><br/>
+			<%= number_to_currency component.last_year * 1_000, :precision => 0 %></br>
+			<%= number_to_currency component.current_year * 1_000, :precision => 0 %>
+
+		</li>
+	<% end %>
+<ul>

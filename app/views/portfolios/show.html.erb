@@ -1,0 +1,7 @@
+<h1><%= @portfolio.name %> [<%= link_to "home", "/portfolios" %>]</h1>
+<strong>Agencies</strong>
+<ul>
+	<% @portfolio.agencies.each do |agency| %>
+	<li><%= link_to agency.name, [agency.portfolio,agency] %></li>
+	<% end %>
+</ul>
