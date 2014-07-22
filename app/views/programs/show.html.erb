@@ -1,11 +1,45 @@
-<h1><%= link_to @program.agency.portfolio.name, @program.agency.portfolio%> - <%= link_to @program.agency.name, [@program.agency.portfolio,@program.agency] %> - <%= link_to @program.name, [@program.agency.portfolio,@program.agency,@program] %></h1>
-<ul>
-	<% @program.components.each do |component| %>
-		<li>
-			<%= component.name %><br/>
-			<%= number_to_currency component.last_year * 1_000, :precision => 0 %></br>
-			<%= number_to_currency component.current_year * 1_000, :precision => 0 %>
 
-		</li>
+
+	<table class='results'><tbody>
+<tr>
+	<td>Portfolio</td>
+			<td>
+				<h4><%= link_to @program.agency.portfolio.name, @program.agency.portfolio%> [<%= link_to "All Portfolios", "/portfolios" %>]</h4>
+			</td> 
+</tr>
+<tr>
+	<td>Agency</td>
+			<td><%= link_to @program.agency.name, [@program.agency.portfolio,@program.agency] %>
+			</td>
+</tr>
+<tr>
+	<td>Program</td>
+			<td><%= @program.name %>
+			</td>
+</tr>
+<% @program.components.each do |component| %>
+<tr>
+	<td>Component</td>	<td><%= component.name %></td>
+</tr>
+<tr>
+		<td>Last Year</td>	
+		<td class='money'>
+				<%= number_to_currency component.last_year * 1_000, :precision => 0 %>
+        </td>
+</tr>
+<tr>				
+	<td>Current Year</td>     
+	<td class='money'>
+		<%= number_to_currency component.current_year * 1_000, :precision => 0 %>
+	   </td>
+</tr>
+<tr>				
+	<td>Difference</td>     
+	<td class='money'>
+		<%=number_to_currency  (component.current_year -  component.last_year) * 1_000, :precision => 0 %>
+	   </td>
+</tr>
+
 	<% end %>
-<ul>
+
+</tbody></table>

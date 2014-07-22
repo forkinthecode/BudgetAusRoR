@@ -1,7 +1,24 @@
-<h1><%= @portfolio.name %> [<%= link_to "home", "/portfolios" %>]</h1>
-<strong>Agencies</strong>
-<ul>
+
+<table class='results'><tbody>
+<tr>
+		<td>
+			<h4>
+			<%= @portfolio.name %> Agencies [<%= link_to "All Portfolios", "/portfolios" %>]
+			</h4>
+		</td>
+</tr>
+<tr>
+	<td>
 	<% @portfolio.agencies.each do |agency| %>
-	<li><%= link_to agency.name, [agency.portfolio,agency] %></li>
+	</td>
+</tr>
+<tr>
+    <td>
+    <%= link_to agency.name, [agency.portfolio,agency] %>
+	</td>
+</tr>
 	<% end %>
-</ul>
+
+	</tbody>
+	</table>
+

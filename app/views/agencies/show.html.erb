@@ -1,6 +1,25 @@
-<h1><%= @agency.portfolio.name%> - <%= @agency.name %></h1>
-<ul>
+<table class='results'><tbody>
+<tr>
+  <td>
+	<h4>
+  
+[<%= link_to @agency.portfolio.name, [@agency.portfolio] %>]<h4></td>
+</tr>
+<tr>
+	<td>
+	<h4> <%= @agency.name %> Agency <h4></td>
+</tr>
+
+
+<tr>
+	<td>	
 	<% @agency.programs.each do |program| %>
-		<li> <%= link_to program.name, [@agency.portfolio, @agency,program] %> </li>
+	</td>
+	</tr>
+	<tr>
+	<td>
+	 <%= link_to program.name, [@agency.portfolio, @agency,program] %> 
+	</td>
+</tr>
 	<% end %>
-<ul>
+</tbody></table>

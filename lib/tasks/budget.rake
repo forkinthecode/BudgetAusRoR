@@ -3,10 +3,15 @@ task :import_budget_data => :environment do
 	Portfolio.all.map &:destroy
 	["portfolios","agencies","programs","components"].each do |x|
 		Portfolio.connection.execute "ALTER TABLE #{x} AUTO_INCREMENT = 1"
+		#sets ids back to 1 so urls remain the same regardless of how many times 
+		#the data is fed into the tables through this rake file
 	end
 	CSV.foreach("./budget.csv", :headers => true) do |row|
 		portfolio = Portfolio.where( :name => row['portfolio']).first_or_create!
-		agency = portfolio.agencies.where( :name => row['agency'], :acronym => row['acronym']).first_or_create!
+		agency = portfolio.agencies.where( :name => row['agency'].first_or_create!
+			#acronym is considered redundant column and removed from rake file 
+			#rake file needs to be re-run to re-generate the data for the agency table
+			#agency table column may need to be deleted
 		program = agency.programs.where(:name => row['program']).first_or_create!
 		#program.objective = row['objectives']
 		#program.save!
