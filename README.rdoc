@@ -1,28 +1,7 @@
-== README
+The working (PHP) version of BudgetAus is online at http://infoaus.net/budget/
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The PHP version of BudgetAus is licenced under the GNU GPL http://www.gnu.org/licenses/quick-guide-gplv3.html 
 
-Things you may want to cover:
+Background documentation is found at the wiki https://github.com/forkinthecode/BudgetAus/wiki
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Budget Data CSV is available at data.gov.au 
