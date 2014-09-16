@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140712061330) do
+ActiveRecord::Schema.define(version: 20140916032139) do
 
   create_table "agencies", force: true do |t|
     t.string   "name"
@@ -27,12 +27,12 @@ ActiveRecord::Schema.define(version: 20140712061330) do
     t.integer  "current_year"
     t.integer  "plus1"
     t.integer  "plus2"
+    t.integer  "plus3",        null: false
     t.string   "source"
     t.string   "url"
     t.integer  "program_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "plus3"
   end
 
   create_table "portfolios", force: true do |t|
