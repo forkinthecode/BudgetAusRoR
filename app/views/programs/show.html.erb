@@ -8,18 +8,18 @@
 			</td> 
 </tr>
 <tr>
-	<td>Agency</td>
+	<td><b>Agency</b></td>
 			<td><%= link_to @program.agency.name, [@program.agency.portfolio,@program.agency] %>
 			</td>
 </tr>
 <tr>
-	<td>Program</td>
+	<td><b>Program</b></td>
 			<td><%= @program.name %>
 			</td>
 </tr>
 <% @program.components.each do |component| %>
 <tr>
-	<td>Component</td>	<td><%= component.name %></td>
+	<td><b>Component</b></td>	<td><%= component.name %></td>
 </tr>
 <tr>
 		<td>Last Year</td>	
@@ -39,7 +39,8 @@
 		<%=number_to_currency  (component.current_year -  component.last_year) * 1_000, :precision => 0 %>
 	   </td>
 </tr>
-
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
 	<% end %>
 
 </tbody></table>
