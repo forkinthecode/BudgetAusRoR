@@ -1,6 +1,22 @@
+<table class='results'><tbody>
+<tr>
+		<td>
+			
 <h1>Portfolios</h1>
-<ul>
+			</h4>
+		</td>
+</tr>
+<tr>
+	<td>
 <% @portfolios.each do |portfolio| %>
-	<li><%= link_to portfolio.name, portfolio %> <%= number_to_currency portfolio.total_spend, :precision => 0 %></li>
-<% end %>
-<ul>
+	</td>
+</tr>
+<tr>
+    <td>
+	<%= link_to portfolio.name, portfolio %></td><td class='money'> <%= number_to_currency portfolio.total_spend, :precision => 0 %>
+	</td>
+</tr>
+	<% end %>
+
+	</tbody>
+	</table>
